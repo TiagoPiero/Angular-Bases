@@ -21,8 +21,8 @@ El ngClass me permite especificarle al elemento una clase con condicion. En este
       <span>{{ character.name }} -  </span>
       <strong>  Power: </strong>
       <span>{{ character.power}}</span>
-      <!-- <span> Es primero: {{ i === 0}} - Es ultimo: {{ i === characterList.length -1 }}</span> -->
-      <!-- <span> Es primero: {{ isFirst }} - Es ultimo: {{ isLast }}</span> -->
+      <span> Es primero: {{ i === 0}} - Es ultimo: {{ i === characterList.length -1 }}</span>
+      <span> Es primero: {{ isFirst }} - Es ultimo: {{ isLast }}</span>
     </div>
 
     <button class = "btn btn-danger" (click)="onDeleteCharacter(character.id)">X</button>
