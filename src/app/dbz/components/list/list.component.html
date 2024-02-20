@@ -1,0 +1,32 @@
+<h4>Listado</h4>
+
+<!-- <ul class = "list-group">
+  <li class = "list-group-item"> Krillin - 500 </li>
+  <li class = "list-group-item"> Goku - 500 </li>
+</ul>  -->
+
+<ul class = "list-group">
+  <li *ngFor="let character of characterList; let i = index; let isFirst = first; let isLast = last; let isEven = even; let isOdd = odd;"
+
+  class = "list-group-item d-flex justify-content-between align-items-center"
+  [ngClass]="{'list-group-item-danger': isLast,
+              'list-group-item-dark': isOdd
+            }">
+
+<!-- con los ; extraemos en variables las distintas cosas que ofrece un ngFor. el indice, primero, ultimo, par, impar...
+El ngClass me permite especificarle al elemento una clase con condicion. En este caso aplicamos dark al ultimo elemento de la lista y aplicamos light a los de indice impar -->
+
+    <div>
+      <span class="text-primary"> {{ i+1 }}.  </span>
+      <span>{{ character.name }} -  </span>
+      <strong>  Power: </strong>
+      <span>{{ character.power}}</span>
+      <!-- <span> Es primero: {{ i === 0}} - Es ultimo: {{ i === characterList.length -1 }}</span> -->
+      <!-- <span> Es primero: {{ isFirst }} - Es ultimo: {{ isLast }}</span> -->
+    </div>
+
+    <button class = "btn btn-danger" (click)="onDeleteCharacter(character.id)">X</button>
+
+  </li>
+</ul>
+

@@ -1,0 +1,25 @@
+<h4> Agregar personaje</h4>
+
+    <form class = "row" (ngSubmit)="emitCharacter()" >  <!-- el ngSubmit es para enviar los datos de los campos del formulario. Permite que se envien los datos haciendo enter en alguno de los campos o bien apretando el boton de agregar -->
+
+      <input
+      type="text"
+      [(ngModel)] = "character.name"
+      name = "name"
+      class="form-control mb-2"
+      placeholder="Name">
+      <!-- [()] asociando evento () y atributo [] al mismo tiempo. Two data binding -->
+
+      <input
+      type="number"
+      [(ngModel)] = "character.power"
+      name="power"
+      class="form-control mb-2"
+      placeholder="Power">
+
+      <button type = "submit" class = "btn btn-primary" >  <!-- submit hace que envie los datos ingresados para hacer el post -->
+        Add Character
+      </button>
+
+      <!-- <pre>{{ character | json}}</pre> -->
+    </form>

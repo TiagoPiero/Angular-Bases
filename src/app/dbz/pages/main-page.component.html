@@ -1,0 +1,17 @@
+<h1>DBZ Personajes</h1>
+<hr>
+
+
+<div class = "row">
+  <div class="col">
+  <dbz-list [characterList]="characters" (onDelete)="onDeleteCharacter($event)" > </dbz-list>
+  </div>
+
+  <div class = "col">
+
+  <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
+
+  <!-- cuando el componente  "dbz-add-character" (hijo) emita el evento onNewCharacter lo que voy a hacer en este componente padre (mainpage) es llamar al metodo onNewCharacter (podria ser otro nombre), recibiendo el objeto Character emitido a traves de "$event".
+  </div> -->
+
+</div>
